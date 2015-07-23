@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<title>
+		{% block pagetitle %}
+
+		{% endblock pagetitle %}
+		</title>
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="/static/assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Custom Theme files -->
+<link href="/static/assets/css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/static/assets/js/jquery-1.11.1.min.js"></script>
+<script src="/static/assets/js/menu_jquery.js"></script>
+
+	</head>
+	<body>
+		{% include "nav_base.html" %}
+		<!--Body content in this block-->
+
+			<!--Put the Register content here.-->
+
+
+	<div class="register">
+		<div class="container">
+		   <form>
+				 <div class="register-top-grid">
+					<h1>PERSONAL INFORMATION</h1>
+					 <div>
+						<span>First Name<label>*</label></span>
+						<input type="text">
+					 </div>
+					 <div>
+						<span>Last Name<label>*</label></span>
+						<input type="text">
+					 </div>
+					 <div>
+						 <span>Email Address<label>*</label></span>
+						 <input type="text">
+					 </div>
+					 <div class="clearfix"> </div>
+					   <a class="news-letter" href="#">
+						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
+					   </a>
+					 </div>
+				     <div class="register-bottom-grid">
+						    <h4>LOGIN INFORMATION</h4>
+							 <div>
+								<span>Password<label>*</label></span>
+								<input type="text">
+							 </div>
+							 <div>
+								<span>Confirm Password<label>*</label></span>
+								<input type="text">
+							 </div>
+							 <div class="clearfix"> </div>
+					 </div>
+				</form>
+				<div class="clearfix"> </div>
+				<div class="register-but">
+				   <form>
+					   <input type="submit" value="submit">
+					   <div class="clearfix"> </div>
+				   </form>
+				</div>
+		   </div>
+	</div>
+			<!--Include footer here-->
+			{% include "footer.html" %}
+
+
+
+
+	</body>
+</html>

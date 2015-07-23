@@ -1,0 +1,9 @@
+{% extends 'base_wrapper.html' %}
+{% block pagetitle %}
+	{% if title %}
+		{{ title }} | {% if title_description %} {{ title_description }} {% endif %}
+
+	{% else %}
+        MedStart
+	{% endif %}
+{% endblock pagetitle %}
