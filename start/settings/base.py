@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages',
+    'login',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -119,7 +120,7 @@ MEDIA_URL = '/media/'
 # Example: "/var/www/example.com/static/"
 #Define static root as ROOT_DIR+'/static/'
 STATIC_ROOT = ROOT_DIR + '/staticfiles/'
-#STATIC_ROOT = 'var/www/svn/aasaan/Aasaanjobs/web/src/staticfiles/'
+#STATIC_ROOT = 'var/www/svn/medstart/Medstart/web/src/staticfiles/'
 
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
@@ -134,3 +135,5 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
+AUTH_USER_MODEL = 'login.User'

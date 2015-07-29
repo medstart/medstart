@@ -4,5 +4,5 @@ from django.shortcuts import render
 def index(request):
     return render(request, "pages/index1.html")
 
-def register(request):
-    return render(request, "register.html")
+# def register(request):
+#     return render(request, "register.html")
