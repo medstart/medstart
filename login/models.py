@@ -40,6 +40,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     Email and password are required. Other fields are optional.
     """
+    username = models.CharField(_('username'),max_length=30,blank=True,null=True)
     email = models.EmailField(_('email address'), max_length=254, unique=True)
     mobile = models.CharField(_('mobile'), max_length=10, null=True, blank=True,unique=True)
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
@@ -56,13 +57,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     activation_key = models.CharField(max_length=255)
     first_time = models.BooleanField(default=False)
     TYPES = (
-        ('PUB', 'Public'),
+        ('CST', 'Customer'),
         ('MER', 'Merchant'),
         ('MAN', 'Manpower'),
 
     )
     terms = models.BooleanField(default=False, blank=True)
-    user_type = models.CharField(null=True, blank=True, max_length=1, choices=TYPES)
+    user_type = models.CharField(null=True, blank=True, max_length=3, choices=TYPES)
 
     objects = UserManager()
     created_by = models.ForeignKey('self', null=True, blank=True, default=None)   # This field is for the User who is creating this User object

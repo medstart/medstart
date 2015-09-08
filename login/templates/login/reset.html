@@ -1,0 +1,59 @@
+{% extends 'pages/home_base.html' %}
+{% block content %}
+        <div class="mid-row">
+
+        <!-- Banner Starts -->
+        <div class="container banner1">
+            <div class="row no-margin">
+                <!-- Banner Left Box Starts -->
+                <div class="col-sm-8 col-md-5 col-xs-10 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 custom-thumbnail login">
+                    <div class="row no-margin ">
+                        <div class="col-sm-12 col-md-12 right-border">
+                            <div class="row no-margin text-center">
+                                <h2 class="text-uppercase"><b>Reset Password</b></h2>
+                                <div class="alert alert-danger form-alert" style="display: none">
+<!--                                        <button type="button" class="close" data-dismiss="alert">×</button>-->
+                                        <div id="alert"></div>
+                                    </div>
+                            </div><!-- /.rw -->
+
+                            <form class="form-horizontal" id="webform" action="#" method="post">
+                              <div class="form-group">
+                                  <div class="col-xs-12">
+                                    <label>Enter your registered mobile no</label>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-3 control-label" for="mobile_no">Mobile No</label>
+                                <div class="col-sm-9">
+                                    <input type="number" name="mobile_no" placeholder="Enter Mobile Number" class="form-control"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="sign-in-alert">
+                                    <div class="alert alert-danger form-alert" style="display: none">
+                                        <button type="button" id="web_button" class="close" data-dismiss="alert">×</button>
+                                        <div id="alert"></div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                   <input type="submit" onclick="formSubmit(this);"  style="display:none;" name="Sign in" value="Sign in">
+                                   <div class="col-xs-12"><a href="javascript:void(0);" class="btn btn-primary center-block submit signin no-mrg" onclick="$('input:submit').click();">Reset</a></div>
+                              </div>
+                            </form>
+
+                            <div class="row no-margin">
+                                <label><p><a href="{% url 'login' %}">Sign in your account</a></p></label>
+                            </div>
+
+                        </div><!-- 8x8 -->
+
+                    </div><!-- /.row custm thmbnl -->
+                </div><!-- /.lg12x12 -->
+                <!-- Banner Left Box Ends -->
+
+            </div>
+        </div>
+        </div>
+{% endblock %}

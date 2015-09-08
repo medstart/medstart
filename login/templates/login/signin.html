@@ -1,0 +1,110 @@
+{% extends 'pages/home_base.html' %}
+{% block content %}
+               <div class="container banner1">
+            <div class="row no-margin">
+                <!-- Banner Left Box Starts -->
+                <div class="col-sm-8 col-md-6 col-xs-10 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 custom-thumbnail login">
+                    <div class="row no-margin">
+                        <div class="col-sm-12 col-md-12 right-border">
+                            <div class="row no-margin">
+                            	<div class="col-xs-12 text-center"><span class="h2 text-uppercase"><b>Sign in</b></span></div>
+                                 <!--<label class="forgot-right text-right"><p><a href="customer/signup">Create an account</a></p></label>-->
+                                <div class="alert alert-danger form-alert" style="display: none">
+<!--                                        <button type="button" class="close" data-dismiss="alert">×</button>-->
+                                        <div id="alert"></div>
+                                    </div>
+
+                            </div><!-- /.rw -->
+                            <div class="col-xs-12">
+                            <form class="form-horizontal" id="login" action="#" method="post" style="margin-top: 20px;">
+                              <div class="form-group">
+                                <label class="col-sm-2 control-label" for="login_name">Username</label>
+                                <div class="col-sm-10">
+                                    <input type="text" id=inputUsername name="login_name" placeholder="Enter Username" class="form-control"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-10">
+                                  <input type="password" class="form-control" id="inputPassword" name="login_password" placeholder="Password">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="sign-in-alert">
+                                    <div class="alert alert-danger form-alert" style="display: none">
+                                        <button type="button" id="web_button" class="close" data-dismiss="alert">×</button>
+                                        <div id="alert"></div>
+                                        <div id="login-err-msg"></div>
+                                    </div>
+                                </div>
+                              </div>
+                                <div class="form-group">
+
+                                  <button type="submit" id="lsignin" class="btn btn-primary center-block btn-form-submit">Sign in</button>
+
+                              </div>
+                            </form>
+                            </div>
+
+
+                                <div class="row forgot-row">
+                                  <div class="col-xs-12">
+                                    <div class="col-sm-6 col-md-6 col-xs-6">
+                            	        <label class="rqpass text-left"><p><a class="new-act-btn" href="{% url 'signup_customer' %}">Create new account</a></p></label>
+                                    </div><!-- /.6x6 -->
+
+                                    <div class="col-sm-6 col-md-6 col-xs-6">
+                                        <label class="rqpass text-right pull-right"><p><a href="{% url 'reset_password' %}">Request password</a></p></label>
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                        </div><!-- 8x8 -->
+
+                    </div><!-- /.row custm thmbnl -->
+                </div><!-- /.lg12x12 -->
+                <!-- Banner Left Box Ends -->
+
+            </div>
+        </div>
+
+    <script type="text/javascript">
+$(document).ready(function(){
+    $('form#login').submit(function(e) {
+        e.preventDefault();
+        username = $('#inputUsername').val();
+        if (username == '') {
+            $('#login-err-msg').text('Username is required');
+            return false;
+        }
+        password = $('#inputPassword').val();
+        if (password == '') {
+            $('#login-err-msg').text('Password. is required');
+            return false;
+        }
+
+        $('#lsignin').attr('disabled', 'disabled');
+        $.ajax({
+            url: "/login/",
+            method: 'POST',
+            data: {
+                username: $('#inputUsername').val(),
+                password: $('#inputPassword').val(), 'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function (result) {
+                console.log(result)
+
+
+            },
+            error: function (result) {
+                $('#login-err-msg').text(result.Error)
+                $('#login').removeAttr('disabled');
+
+            }
+
+        });
+    });
+    });
+</script>
+{% endblock %}
