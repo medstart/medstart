@@ -1,0 +1,135 @@
+{% extends 'pages/home_base.html' %}
+{% block content %}
+
+    <div class= "container banner1">
+    <div class="row no-margin">
+    <div class="col-sm-12 col-md-6 col-md-offset-3 custom-thumbnail signUp">
+                    <div class="row sign-up">
+                        <div class="col-sm-12 right-border signup">
+                            <div class="row">
+                              <div class="col-xs-12 text-center">
+                                <h2 class="text-uppercase"><b>Create an Account</b></h2>
+                              </div>
+                            </div><!-- /.rw -->
+
+                            <form class="form-horizontal" id="signup" action="#" method="post" style="margin-top: 20px;">
+                                <div id="congMsg"></div>
+
+                              <div class="form-group">
+                                <label class="col-sm-3 control-label" for="email">Email</label>
+                                <div class="col-sm-9">
+                                    <input type="email" id="remail" name="email" placeholder="Enter Email" class="form-control"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-3 control-label" for="mobile_no">Mobile No</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">+91</span>
+                                        <input type="number" id="rmobile" name="mobile_no" placeholder="Enter Mobile Number" class="form-control"/>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="rPassword" class="col-sm-3 control-label">Password</label>
+                                <div class="col-sm-9">
+                                  <input type="password" class="form-control" id="rPassword" name="inputPassword" placeholder="Enter Password">
+                                </div>
+                              </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12 col-md-9 col-md-offset-3">
+                                      <input type="checkbox" checked>
+                                      <a href="">I Accept Terms & conditions.</a>
+                                    </div>
+                                    <div class="col-xs-12 col-md-9 col-md-offset-3">
+                                        <div id="reg-err-msg"></div>
+                                    </div>
+                                </div>
+                              <div class="form-group">
+                                  <div class="sign-in-alert">
+                                    <div class="alert alert-danger form-alert" style="display: none">
+                                        <button type="button" id="web_button" class="close" data-dismiss="alert">×</button>
+                                        <div id="alert"></div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="form-group">
+
+                                  <button type="submit" id="rsignup" userkey="C" class="btn btn-primary center-block btn-form-submit">Create Account</button>
+
+                              </div>
+
+                            </form>
+
+                            <div class="col-xs-12 checkbox-right">
+                                <div class="row">
+                                    <p class="pull-right"><a href="{% url 'login' %}">Already have an account</a></p>
+                                </div>
+                            </div>
+
+                        </div><!-- 8x8 -->
+
+                    </div>
+    <div class="clearfix"> </div>
+                </div><!-- /.lg12x12 -->
+    </div>
+    </div>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('form#signup').submit(function(e) {
+        e.preventDefault();
+        email = $('#remail').val();
+        if (email == '') {
+            $('#reg-err-msg').text('Email is required');
+            return false;
+        }
+        mobile = $('#rmobile').val();
+        if (mobile == '') {
+            $('#reg-err-msg').text('Mobile no. is required');
+            return false;
+        }
+        if (mobile != parseInt(mobile, 10)) {
+            $('#reg-err-msg').text('Mobile no. should be Integer');
+            return false;
+        } else {
+            $('#reg-err-msg').text('');
+        }
+        if (mobile.length != 10) {
+            $('#reg-err-msg').text('Mobile no. should be of 10 character only');
+            return false;
+        } else {
+            $('#reg-err-msg').text('');
+        }
+
+        password = $('#rPassword').val();
+        if (password == '') {
+            $('#reg-err-msg').text('Password is required');
+            return false;
+        }
+
+        $('#rsignup').attr('disabled', 'disabled');
+        $.ajax({
+            url: "{% url 'signup_customer' %}",
+            method: 'POST',
+            data: {
+                email: $("#remail").val(), mobile: $("#rmobile").val(),
+                password: $("#rPassword").val(), 'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function (result) {
+                console.log(result)
+                $("#congMsg").text(result.Success)
+
+            },
+            error: function (result) {
+                $('#reg-err-msg').text(result.Error)
+                $('#signup').removeAttr('disabled');
+
+            }
+
+        });
+    });
+    });
+</script>
+
+
+{% endblock content %}

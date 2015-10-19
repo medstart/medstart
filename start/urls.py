@@ -19,5 +19,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'pages.views.index', name='index'),
+    url(r'^', include('login.urls')),
+    url(r'^', include('merchant.urls')),
+    # url(r'^signup/$', 'login.views.register', name='signup'),
     # url(r'^register/$', 'pages.views.register', name='register'),
 ]
