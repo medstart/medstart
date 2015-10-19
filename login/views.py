@@ -32,10 +32,10 @@ def register_customer(request):
         u=User()
         try:
             if User.objects.filter(email=email):
-                response_data={'Error':'User with this email Already Exist'}
+                response_data={'Error':'User with this email Already Exists'}
                 return HttpResponse(json.dumps(response_data),content_type="application/json")
             elif User.objects.filter(mobile=mobile):
-                response_data={'Error':'User with this mobile Already Exist'}
+                response_data={'Error':'User with this mobile Already Exists'}
                 return HttpResponse(json.dumps(response_data),content_type="application/json")
             else:
                 u = User.objects.create(email=email,mobile=mobile,user_type = 'CST',terms=True)
