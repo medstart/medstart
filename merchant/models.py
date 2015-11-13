@@ -22,7 +22,8 @@ class Merchant(models.Model):
         ('GOV', 'Goverment Funded'),
         ('PER', 'Personal Licensed Merchant'),
         )
-    merchant_type = models.CharField(max_length=3, choices=MERCHANT_TYPE_CHOICES)
+    phoneno = models.CharField(max_length=11, blank=True, null=True)
+    merchant_type = models.CharField(max_length=3, choices=MERCHANT_TYPE_CHOICES, default="LIC")
     description = models.TextField(max_length=500, null=True, blank=True)
     mer_website = models.CharField(max_length=255, null=True, blank=True)
     logo = models.ImageField(max_length=100, upload_to='media/%Y/%m/%d', blank=True, null=True, default=None)
@@ -58,6 +59,7 @@ class Managers(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, default="M")
     photo = models.ImageField(max_length=100, upload_to='media/%Y/%m/%d', blank=True, null=True)
     is_verified = models.BooleanField(default=False)
+    mobile = models.CharField(max_length=10, blank=True, null=True)
 
     def __unicode__(self):
         if self.first_name:

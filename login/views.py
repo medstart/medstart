@@ -87,7 +87,7 @@ def register_merchant(request):
                 u.backend = 'django.contrib.auth.backends.ModelBackend'
                 login(request, u)
                 return HttpResponseRedirect(reverse('index'))
-        except Exception , e:
+        except Exception, e:
             print e
             return render(request,"login/signup.html")
 
@@ -121,9 +121,6 @@ def userlogin(request):
             return HttpResponse(json.dumps(response_data),content_type="application/json")
 
 
-def merchant_info(request):
-    title = 'general info | medstart'
-    return render(request,"merchant/companyinfo.html",locals())
 
 
 

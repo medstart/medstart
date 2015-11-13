@@ -8,61 +8,53 @@
                     <div class="row no-margin">
                         <div class="col-md-12 col-md-12 right-border">
                             <div class="row no-margin">
-                            	<div class="col-md-12 text-center"><span class="h2 text-uppercase"><b>Pharmacy Details</b></span></div>
+                            	<div class="col-md-12 text-center"><span class="h2 text-uppercase"><b>Manager Details</b></span></div>
                                 <div class="alert alert-danger form-alert" style="display: none">
                                         <div id="alert"></div>
                                     </div>
 
                             </div><!-- /.rw -->
                             <div class="col-md-12">
-                            <form class="form-horizontal" id="pharmacy_info" action="{% url 'merchant_info' %}" method="post" style="margin-top: 20px;"> {% csrf_token %}
+                            <form class="form-horizontal" id="manager_info" action="{% url 'manager_info' %}" method="post" style="margin-top: 20px;"> {% csrf_token %}
                               <div class="form-group">
-                                <label class="col-md-3 control-label" for="phName">Pharmacy Name</label>
+                                <label class="col-md-3 control-label" for="phName">First Name</label>
                                 <div class="col-md-9">
                                     {{ form.errors }}
-                                    {{ form.mer_name }}
+                                    {{ form.first_name }}
 {#                                    <input type="text" id=inputUsername name="login_name" placeholder="Enter your registered shop name" class="form-control"/>#}
                                 </div>
                               </div>
 
                                 <div class="form-group">
-                                <label class="col-md-3 control-label" for="web">Website</label>
+                                <label class="col-md-3 control-label" for="web">Last Name</label>
                                 <div class="col-md-9">
                                     {{ form.errors }}
-                                    {{ form.mer_website }}
+                                    {{ form.last_name }}
 {#                                    <input type="text" id=inputUsername name="login_name" placeholder="Enter your registered shop name" class="form-control"/>#}
                                 </div>
                               </div>
                                 <div class="form-group">
-                                <label class="col-md-3 control-label" for="phone">Phone Number</label>
+                                <label class="col-md-3 control-label" for="phone">Gender</label>
                                 <div class="col-md-9">
                                     {{ form.errors }}
-                                    {{ form.phoneno }}
+                                    {{ form.gender }}
 {#                                    <input type="text" id=inputUsername name="login_name" placeholder="Enter your registered shop name" class="form-control"/>#}
                                 </div>
                               </div>
                               <div class="form-group">
-                                <label for="phType" class="col-md-3 control-label">Pharmacy Type</label>
+                                <label for="phType" class="col-md-3 control-label">Photo</label>
                                 <div class="col-md-9">
                                     {{ form.errors }}
-                                    {{ form.merchant_type }}
+                                    {{ form.photo }}
 {#                                  <input type="password" class="form-control" id="inputPassword" name="login_password" placeholder="Password">#}
                                 </div>
                               </div>
                               <div class = "form-group">
-                                  <label for="logo" class="col-md-3 control-label">Pharmacy Logo</label>
+                                  <label for="logo" class="col-md-3 control-label">Mobile No</label>
                                 <div class="col-md-9">
                                     {{ form.errors }}
-                                    {{ form.logo }}
+                                    {{ form.mobile }}
 {#                                  <input type="password" class="form-control" id="inputPassword" name="login_password" placeholder="Password">#}
-                                </div>
-                              </div>
-                                 <div class="form-group">
-                                <label class="col-md-3 control-label" for="desc"> Description</label>
-                                <div class="col-md-9">
-                                    {{ form.errors }}
-                                    {{ form.description }}
-{#                                    <input type="text" id=inputUsername name="login_name" placeholder="Enter your registered shop name" class="form-control"/>#}
                                 </div>
                               </div>
                                       <div class="form-group">

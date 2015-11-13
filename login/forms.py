@@ -26,3 +26,4 @@ class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = User
+        fields = "__all__"
