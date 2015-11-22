@@ -1,124 +1,20 @@
 {% extends 'pages/home_base.html' %}
 {% block content %}
-    	<div class="banner">
-		<div class="container">
-			<div class="span_1_of_1">
-			    <h2>Discover local medical shops near You <br> that deliver to your doorstep</h2>
-			    <div class="search">
-			      <ul class="nav1">
-		            <li id="search">
-						<form action="" method="get">
-							<input type="text" name="search_text" id="search_text" placeholder="Search"/>
-							<input type="button" name="search_button" id="search_button">
-						</form>
-					</li>
-					<li id="options">
-						<a href="#">Search For</a>
-						<ul class="subnav">
-							<li><a href="#">Shops</a></li>
-							<li><a href="#">Medicines</a></li>
+<div class="row">
+    <div class="row col-md-12 page-header">
+             <div class="col-md-offset-5">
+             <div class="col-md-2">
+             <input class="radio-input" type="radio" name="test" value="ph" checked="checked"/>
+                 <label class="radio-label">Pharmacy</label>
 
-						</ul>
-					</li>
-	              </ul>
-	            </div>
-			</div>
-		</div>
-	</div>
-	<div class="grid_1">
-		<h3>How It Works Goes Here</h3>
+             </div>
+                 <div class="col-md-2">
+             <input class="radio-input" type="radio" name="test" value="md"/>
+                 <label class="radio-label">Medicine</label>
+             </div>
+             </div>
+     </div>
 
-
-		<div class="col-md-2 col_1">
-			<img src="/static/assets/images/g4.jpg" class="img-responsive" alt=""/>
-		</div>
-		<div class="col-md-2 col_1">
-			<img src="/static/assets/images/g5.jpg" class="img-responsive" alt=""/>
-		</div>
-        <div class="col-md-2 col_1">
-			<img src="/static/assets/images/f2.jpg" class<div class="clearfix"> </div>="img-responsive" alt=""/>
-		</div>
-		<div class="col-md-2 col_1">
-			<img src="/static/assets/images/f3.jpg" class="img-responsive" alt=""/>
-		</div>
-		<div class="col-md-2 col_1">
-			<img src="/static/assets/images/f4.jpg" class="img-responsive" alt=""/>
-		</div>
-
-		<div class="clearfix"> </div>
-	</div>
-	<div class="grid_1">
-
-
-				<h3>Something More Here</h3>
-
-			<div class="col-md-9 col_5">
-				<div class="col_1_of_5 span_1_of_5">
-					<ul class="list1">
-					    <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-		            </ul>
-				</div>
-				<div class="col_1_of_5 span_1_of_5">
-					<ul class="list1">
-					    <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-		            </ul>
-				</div>
-				<div class="col_1_of_5 span_1_of_5">
-					<ul class="list1">
-					    <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-		            </ul>
-				</div>
-				<div class="col_1_of_5 span_1_of_5">
-					<ul class="list1">
-					    <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-		            </ul>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-
-
-{#    <!--quick find-->#}
-{#    {% include 'pages/quick_find.html' %}#}
-{##}
-{#    <!-- Statistics -->#}
-{#    {% include 'pages/statistics-data.html' %}#}
-{##}
-{#    <!--How we do it-->#}
-{#    {% include 'pages/howwedoit.html' %}#}
-{##}
-{#    <!-- Why US -->#}
-{#    {% include 'pages/why_us.html' %}#}
-{##}
-{#    <!--Testomonail-->#}
-{#    {% include 'pages/testimonial.html' %}#}
-{##}
-{#    <!--As seen on-->#}
-{#    {% include 'pages/as_seen_on.html' %}#}
-{#    #}
-{#    #}
-{#    <!--<script src="{% static 'assets/new-dashboard/js/jquery.scrollTo.min.js' %}"></script>#}
-{#    <script src="{% static 'js/jquery.cookie.js' %}"></script>-->#}
-{% endblock content %} 
+</div>
+{% endblock content %}
 
