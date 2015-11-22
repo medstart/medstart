@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 $('#cssmenu > ul > li > a').click(function() {
   $('#cssmenu li').removeClass('active');
-  $(this).closest('li').addClass('active');	
+  $(this).closest('li').addClass('active');
   var checkElement = $(this).next();
   if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
     $(this).closest('li').removeClass('active');
@@ -14,8 +14,8 @@ $('#cssmenu > ul > li > a').click(function() {
   if($(this).closest('li').find('ul').children().length == 0) {
     return true;
   } else {
-    return false;	
-  }		
+    return false;
+  }
 });
 });
 
@@ -30,7 +30,7 @@ $(function() {
         box.toggle();
         button.toggleClass('active');
     });
-    form.mouseup(function() { 
+    form.mouseup(function() {
         return false;
     });
     $(this).mouseup(function(login) {

@@ -1,79 +1,82 @@
 {% extends 'pages/home_base.html' %}
 {% block content %}
+       <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-12" role="main">
+              <div class="bs-docs-section">
+                    <h1 id="overview" class="page-header">CREATE AN ACCOUNT</h1>
+                  <section>
+                    <form action="#" id="signup" method="POST">
+                    <div id="login-main" style="margin-top:0px;" class="login_shake">
+                        <h1>Dear Valued Customer</h1>
+                            <p>Welcome To WeMed! Thank you for choosing us for your healthcare needs. We are committed to 100% customer satisfaction and we will do everything possible to make sure you are always satisfied with your purchase and our service.</p>
+                            <div class="clear"></div>
+                            <div class="clear1"></div>
+                            <div class="login_arrow expandable loginopenheadernew">Enter Your Details</div>
+                            <div class="checkout_panel" id="ordvalret" style="margin-bottom:0px;">
 
-    <div class= "container banner1">
-    <div class="row no-margin">
-    <div class="col-sm-12 col-md-6 col-md-offset-3 custom-thumbnail signUp">
-                    <div class="row sign-up">
-                        <div class="col-sm-12 right-border signup">
-                            <div class="row">
-                              <div class="col-xs-12 text-center">
-                                <h2 class="text-uppercase"><b>Create an Account</b></h2>
-                              </div>
-                            </div><!-- /.rw -->
-
-                            <form class="form-horizontal" id="signup" action="#" method="post" style="margin-top: 20px;">
-                                <div id="congMsg"></div>
-
-                              <div class="form-group">
-                                <label class="col-sm-3 control-label" for="email">Email</label>
-                                <div class="col-sm-9">
-                                    <input type="email" id="remail" name="email" placeholder="Enter Email" class="form-control"/>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label class="col-sm-3 control-label" for="mobile_no">Mobile No</label>
-                                <div class="col-sm-9">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">+91</span>
-                                        <input type="number" id="rmobile" name="mobile_no" placeholder="Enter Mobile Number" class="form-control"/>
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="rPassword" class="col-sm-3 control-label">Password</label>
-                                <div class="col-sm-9">
-                                  <input type="password" class="form-control" id="rPassword" name="inputPassword" placeholder="Enter Password">
-                                </div>
-                              </div>
-                                <div class="form-group">
-                                    <div class="col-xs-12 col-md-9 col-md-offset-3">
-                                      <input type="checkbox" checked>
-                                      <a href="">I Accept Terms & conditions.</a>
-                                    </div>
-                                    <div class="col-xs-12 col-md-9 col-md-offset-3">
-                                        <div id="reg-err-msg"></div>
-                                    </div>
-                                </div>
-                              <div class="form-group">
-                                  <div class="sign-in-alert">
-                                    <div class="alert alert-danger form-alert" style="display: none">
-                                        <button type="button" id="web_button" class="close" data-dismiss="alert">×</button>
-                                        <div id="alert"></div>
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="form-group">
-
-                                  <button type="submit" id="rsignup" userkey="C" class="btn btn-primary center-block btn-form-submit">Create Account</button>
-
-                              </div>
-
-                            </form>
-
-                            <div class="col-xs-12 checkbox-right">
                                 <div class="row">
-                                    <p class="pull-right"><a href="{% url 'login' %}">Already have an account</a></p>
+                                    <div class="col-sm-12">
+                                        <div class="clear_h"></div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="email">Enter Your E-mail ID *</label>
+                                                <input type="email" id="remail" name="email" maxlength="50" class="form-control field-required" tabindex="1"><br>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="mobile_no">Enter Mobile No. *</label>
+                                                    <input type="number" id="rmobile" name="mobile_no" maxlength="10" class="form-control field-required">
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="rPassword">Choose Your Password *</label>
+                                                <input type="password" id="rPassword" name="inputPassword" maxlength="15" class="form-control field-required" tabindex="1"><br>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="cnfPassword">Confirm Your Password*</label>
+                                                    <input type="password" id="cnfPassword" name="inputCnfPassword" maxlength="15" class="form-control field-required" tabindex="2">
+                                                </div>
+                                            </div>
+                                        <div id="reg-err-msg" style="color: green"></div>
+                                        </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-6">
+                                            <div class="wall-txt">
+                                                <input type="checkbox" checked>
+                                                  <a href="">I Accept Terms & conditions.</a>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                                <div class="wall-txt">
+                                                    <button type="submit" id="rsignup" userkey="C" class="btn btn-primary btn-form-submit">Create My Account</button>
+                                                </div>
+                                        </div>
+                                        <div class="clear_h"></div>
+                                    </div>
+
+                                    </div>
                                 </div>
-                            </div>
-
-                        </div><!-- 8x8 -->
-
-                    </div>
-    <div class="clearfix"> </div>
-                </div><!-- /.lg12x12 -->
-    </div>
-    </div>
+                                <div class="clear"></div>
+                                <div class="login_arrow expandable rsignin"  url= "{% url 'login'  %}">Already Have an Account? Continue Here..</div>
+                      </div>
+                        </form>
+                  </section>
+                </div>
+            </div>
+        </div>
+   </div>
 <script type="text/javascript">
 $(document).ready(function(){
     $('form#signup').submit(function(e) {
@@ -81,21 +84,30 @@ $(document).ready(function(){
         email = $('#remail').val();
         if (email == '') {
             $('#reg-err-msg').text('Email is required');
+            $("#reg-err-msg").show();
+            $("#reg-err-msg").delay(3200).fadeOut(3000);
             return false;
+
         }
         mobile = $('#rmobile').val();
         if (mobile == '') {
             $('#reg-err-msg').text('Mobile no. is required');
+            $("#reg-err-msg").show();
+            $("#reg-err-msg").delay(3200).fadeOut(3000);
             return false;
         }
         if (mobile != parseInt(mobile, 10)) {
             $('#reg-err-msg').text('Mobile no. should be Integer');
+            $("#reg-err-msg").show();
+            $("#reg-err-msg").delay(3200).fadeOut(3000);
             return false;
         } else {
             $('#reg-err-msg').text('');
         }
         if (mobile.length != 10) {
             $('#reg-err-msg').text('Mobile no. should be of 10 character only');
+            $("#reg-err-msg").show();
+            $("#reg-err-msg").delay(3200).fadeOut(3000);
             return false;
         } else {
             $('#reg-err-msg').text('');
@@ -104,9 +116,23 @@ $(document).ready(function(){
         password = $('#rPassword').val();
         if (password == '') {
             $('#reg-err-msg').text('Password is required');
+            $("#reg-err-msg").show();
+            $("#reg-err-msg").delay(3200).fadeOut(3000);
             return false;
         }
-
+        cnfpassword = $('#cnfPassword').val();
+        if (cnfpassword == '') {
+            $('#reg-err-msg').text('Please Confirm Your Password');
+            $("#reg-err-msg").show();
+            $("#reg-err-msg").delay(3200).fadeOut(3000);
+            return false;
+        }
+        if (password != cnfpassword ) {
+            $('#reg-err-msg').text('Please confirm your password carefully');
+            $("#reg-err-msg").show();
+            $("#reg-err-msg").delay(3200).fadeOut(3000);
+            return false;
+        }
         $('#rsignup').attr('disabled', 'disabled');
         $.ajax({
             url: "{% url 'signup_customer' %}",
@@ -117,17 +143,20 @@ $(document).ready(function(){
             },
             success: function (result) {
                 console.log(result)
-                $("#congMsg").text(result.Success)
-
-            },
-            error: function (result) {
                 $('#reg-err-msg').text(result.Error)
-                $('#signup').removeAttr('disabled');
-
+                $('#rsignup').removeAttr('disabled');
+                $("#reg-err-msg").delay(3200).fadeOut(3000);
             }
 
         });
     });
+     $("div.rsignin").click(
+            function()
+            {
+                window.location = $(this).attr("url");
+                return false;
+            });
+
     });
 </script>
 
