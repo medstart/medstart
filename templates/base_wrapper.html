@@ -9,23 +9,17 @@
 		{% endblock pagetitle %}
 		</title>
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href="/static/assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!-- Custom Theme files -->
-<link href="/static/assets/css/style.css" rel='stylesheet' type='text/css' />
-{#<link href="/static/assets/css/font-awesome.min.css" rel='stylesheet' type='text/css' />#}
-<link href="/static/assets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-<!-- Custom Theme files -->
-<!--webfont-->
-{#<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>#}
-{#<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>#}
-<script type="text/javascript" src="/static/assets/js/jquery-1.11.1.min.js"></script>
-<script src="/static/assets/js/menu_jquery.js"></script>
-<script src="/static/assets/js/bootstrap.js"></script>
-<script src="/static/assets/js/jquery.min.js"></script>
-<script src="/static/assets/js/bootstrap.min.js"></script>
-		
+
+        <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/assets/css/blog.css" rel="stylesheet">
+		<link href="/static/assets/css/sticky-footer.css" rel="stylesheet">
+        <link href="/static/assets/css/custom.css" rel="stylesheet">
+        <script type="text/javascript" src="/static/assets/js/jquery-min-1.11.1.min.js"></script>
+        <script src="/static/assets/js/menu_jquery.js"></script>
+        <script src="/static/assets/js/bootstrap.js"></script>
+        <script src="/static/assets/js/jquery.min.js"></script>
+        <script src="/static/assets/js/bootstrap.min.js"></script>
+        <script src="/static/assets/js/google_jquery.min.js"></script>
 	</head>
 	<body>
 		{% include "nav_base.html" %}
@@ -33,13 +27,14 @@
 
 			<!--Put the template content here.-->
 			{% block content %}
-				
+
 			{% endblock content %}
-			
 			<!--Include footer here-->
 			{% include "footer.html" %}
 			
 			
+
+
 
 
 	</body>
