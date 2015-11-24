@@ -1,83 +1,74 @@
 {% extends 'pages/home_base.html' %}
 
 {% block content %}
-               <div class="container banner1">
-            <div class="row no-margin">
-                <!-- Banner Left Box Starts -->
-                <div class="col-lg-8 col-md-6 col-md-10 col-md-offset-2 col-md-offset-2 col-md-offset-3 custom-thumbnail login">
-                    <div class="row no-margin">
-                        <div class="col-md-12 col-md-12 right-border">
-                            <div class="row no-margin">
-                            	<div class="col-md-12 text-center"><span class="h2 text-uppercase"><b>Manager Details</b></span></div>
-                                <div class="alert alert-danger form-alert" style="display: none">
-                                        <div id="alert"></div>
+        <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-12" role="main">
+              <div class="bs-docs-section">
+                    <h1 id="overview" class="page-header">Enter Your Details</h1>
+                  <section>
+                    <form id="manager_info" action="{% url 'manager_info' %}" method="post"> {% csrf_token %}
+                        <div id="login-main" style="margin-top:0px;" class="login_shake">
+                            <h1>Dear Manager</h1>
+                                <p>Please give your details carefully. In case of any issue please let us know.</p>
+                                    <div class="clear"></div>
+                                    <div class="clear1"></div>
+                                <div class="checkout_panel" id="ordvalret" style="margin-bottom:0px;">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="clear_h"></div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="fName">First Name*</label>
+                                                        {{ form.errors }}
+                                                        {{ form.first_name }}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="lName">Last Name*</label>
+                                                    {{ form.last_name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="gender">Gender</label>
+                                                    {{ form.gender }}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="photo">Upload Your Image </label>
+                                                    {{ form.photo }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <div class="col-sm-3 col-sm-offset-6">
+                                                <div class="form-group">
+                                                    <label for="desc"> Mobile Number</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-7 col-sm-offset-4">
+                                                <div class="form-group">
+                                                    {{ form.mobile }}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-                            </div><!-- /.rw -->
-                            <div class="col-md-12">
-                            <form class="form-horizontal" id="manager_info" action="{% url 'manager_info' %}" method="post" style="margin-top: 20px;"> {% csrf_token %}
-                              <div class="form-group">
-                                <label class="col-md-3 control-label" for="phName">First Name</label>
-                                <div class="col-md-9">
-                                    {{ form.errors }}
-                                    {{ form.first_name }}
-{#                                    <input type="text" id=inputUsername name="login_name" placeholder="Enter your registered shop name" class="form-control"/>#}
+                                    <div class="form-group">
+                                        <button type="submit" id="lsignin" class="btn btn-primary center-block btn-form-submit">Continue For Next</button>
+                                    </div>
                                 </div>
-                              </div>
-
-                                <div class="form-group">
-                                <label class="col-md-3 control-label" for="web">Last Name</label>
-                                <div class="col-md-9">
-                                    {{ form.errors }}
-                                    {{ form.last_name }}
-{#                                    <input type="text" id=inputUsername name="login_name" placeholder="Enter your registered shop name" class="form-control"/>#}
-                                </div>
-                              </div>
-                                <div class="form-group">
-                                <label class="col-md-3 control-label" for="phone">Gender</label>
-                                <div class="col-md-9">
-                                    {{ form.errors }}
-                                    {{ form.gender }}
-{#                                    <input type="text" id=inputUsername name="login_name" placeholder="Enter your registered shop name" class="form-control"/>#}
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="phType" class="col-md-3 control-label">Photo</label>
-                                <div class="col-md-9">
-                                    {{ form.errors }}
-                                    {{ form.photo }}
-{#                                  <input type="password" class="form-control" id="inputPassword" name="login_password" placeholder="Password">#}
-                                </div>
-                              </div>
-                              <div class = "form-group">
-                                  <label for="logo" class="col-md-3 control-label">Mobile No</label>
-                                <div class="col-md-9">
-                                    {{ form.errors }}
-                                    {{ form.mobile }}
-{#                                  <input type="password" class="form-control" id="inputPassword" name="login_password" placeholder="Password">#}
-                                </div>
-                              </div>
-                                      <div class="form-group">
-
-                                  <button type="submit" id="lsignin" class="btn btn-primary center-block btn-form-submit">Next</button>
-
-                              </div>
-                            </form>
-                            </div>
-
-
-
-
-
-                        </div><!-- 8x8 -->
-
-                    </div><!-- /.row custm thmbnl -->
-                </div><!-- /.lg12x12 -->
-                <!-- Banner Left Box Ends -->
-
+                                <div class="clear"></div>
+                        </div>
+                    </form>
+                  </section>
+              </div>
             </div>
         </div>
-
-
+    </div>
 {% endblock %}
 
