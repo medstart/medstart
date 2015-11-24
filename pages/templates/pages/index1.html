@@ -1,123 +1,54 @@
 {% extends 'pages/home_base.html' %}
 {% block content %}
-    	<div class="banner">
-		<div class="container">
-			<div class="span_1_of_1">
-				<fieldset>
-					<div class"radioset">
-            			<input class="radio-input" type="radio" name="product-selection" value="Pharmacy" />
-            			<label class="radio-label">Pharmacy Shops</label>
-            			<input class="radio-input" type="radio" name="product-selection" value="Medicines" />
-            			<label class="radio-label">Medicines</label>
-            		</div>
-            	</fieldset>
-				<h2>Discover local medical shops near You <br> that deliver to your doorstep</h2>
-			    
-<fieldset>
-    <div class="dropdown">
-      <select name="one" class="dropdown-select">
-        <option value="">State</option>
-        <option value="1">Option #1</option>
-        <option value="2">Option #2</option>
-        <option value="3">Option #3</option>
-      </select>
+<div class="container">
+<div class="row">
+    <br>
+    <div class="row col-md-12">
+             <div class="col-md-offset-4">
+             <div class="col-md-4">
+             <input class="radio-input" type="radio" name="test" value="ph" checked="checked"/>
+                 <label class="radio-label">Pharmacy</label>
+
+             </div>
+                 <div class="col-md-4">
+             <input class="radio-input" type="radio" name="test" value="md"/>
+                 <label class="radio-label">Medicine</label>
+             </div>
+             </div>
+
+     </div>
+
+</div>
+    <hr width="50%" >
+     <div class="search_bgr">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Order medicine online from the best pharmacy near you</h2>
+                    <div class="location-search-inne">
+                        <form method="post" class="search-form" action="#">
+                            <div class="city">
+                               <label for="cityId" class="required"></label>
+                                <div class="dropdown-typeahead-wrapper" id="wrapper-element-1">
+                                    <select id="cityId" name="cityId" data-prefill="location.cityId" class="form-control" placeholder="Enter a city">
+                                        <option value="1">Mumbai</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="area">
+                               <label for="cityId" class="required"></label>
+                                <div class="dropdown-typeahead-wrapper" id="wrapper-element-1">
+                                    <select id="cityId" name="cityId" data-prefill="location.cityId" class="form-control" placeholder="Enter a city">
+                                        <option value="1">Powai</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="find">
+                                <button type="submit" id="button" name="button" class="btn btn-primary btn-block" style="margin-top: 36px">Continue</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
     </div>
-    <div class="dropdown">
-      <select name="two" class="dropdown-select">
-        <option value="">City</option>
-        <option value="1">Option #1</option>
-        <option value="2">Option #2</option>
-        <option value="3">Option #3</option>
-      </select>
-      </div>
-      <div class="dropdown">
-      <select name="three" class="dropdown-select">
-        <option value="">Landmark</option>
-        <option value="1">Option #1</option>
-        <option value="2">Option #2</option>
-        <option value="3">Option #3</option>
-      </select>
-      </div>
-      <br>
-      <input type="submit" value="Submit" style="width: 200px; height: 45px; " />
-</fieldset>
- 
 
-			</div>
-		</div>
-	</div>
-	<div class="grid_1">
-
-
-				<h3>Something More Here</h3>
-
-			<div class="col-md-9 col_5">
-				<div class="col_1_of_5 span_1_of_5">
-					<ul class="list1">
-					    <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-		            </ul>
-				</div>
-				<div class="col_1_of_5 span_1_of_5">
-					<ul class="list1">
-					    <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-		            </ul>
-				</div>
-				<div class="col_1_of_5 span_1_of_5">
-					<ul class="list1">
-					    <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-		            </ul>
-				</div>
-				<div class="col_1_of_5 span_1_of_5">
-					<ul class="list1">
-					    <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-			            <li><a href="#">MedStart</a></li>
-		            </ul>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-
-
-{#    <!--quick find-->#}
-{#    {% include 'pages/quick_find.html' %}#}
-{##}
-{#    <!-- Statistics -->#}
-{#    {% include 'pages/statistics-data.html' %}#}
-{##}
-{#    <!--How we do it-->#}
-{#    {% include 'pages/howwedoit.html' %}#}
-{##}
-{#    <!-- Why US -->#}
-{#    {% include 'pages/why_us.html' %}#}
-{##}
-{#    <!--Testomonail-->#}
-{#    {% include 'pages/testimonial.html' %}#}
-{##}
-{#    <!--As seen on-->#}
-{#    {% include 'pages/as_seen_on.html' %}#}
-{#    #}
-{#    #}
-{#    <!--<script src="{% static 'assets/new-dashboard/js/jquery.scrollTo.min.js' %}"></script>#}
-{#    <script src="{% static 'js/jquery.cookie.js' %}"></script>-->#}
-{% endblock content %} 
+{% endblock content %}
 

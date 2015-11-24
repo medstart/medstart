@@ -8,8 +8,9 @@ from django.http import HttpResponseRedirect
 
 def merchant_info(request):
     title = 'Pharmacy Details | medstart'
-    form = MerchantInfo()
+
     if request.method == 'GET':
+        form = MerchantInfo()
         return render(request, "merchant/companyinfo.html", locals())
     else:
         form = MerchantInfo(request.POST, request.FILES)
@@ -21,8 +22,9 @@ def merchant_info(request):
 
 def manager_info(request):
     title = 'Manager Details | medstart'
-    form = ManagerInfo()
+
     if request.method == 'GET':
+        form = ManagerInfo()
         return render(request, "merchant/managerinfo.html", locals())
     else:
         form = ManagerInfo(request.POST, request.FILES)
@@ -34,8 +36,9 @@ def manager_info(request):
 
 def mercontact_info(request):
     title = 'Office Details | medstart'
-    form = OfficeInfo()
+
     if request.method == 'GET':
+        form = OfficeInfo()
         return render(request, "merchant/officeinfo.html", locals())
     else:
         form = OfficeInfo(request.POST, request.FILES)

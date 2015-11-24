@@ -1,85 +1,81 @@
 {% extends 'pages/home_base.html' %}
 {% block content %}
+      <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-12" role="main">
+              <div class="bs-docs-section">
+                    <h1 id="overview" class="page-header">GET LISTING ON WeMed</h1>
+                  <section>
+                    <form action="#" id="signup1" method="POST">
+                    <div id="login-main" style="margin-top:0px;" class="login_shake">
+                        <h1>Dear Business Partener</h1>
+                            <p>Welcome To WeMed! Thank you for choosing us for growing your business. We will do everything possible to make sure you are always satisfied with our service.</p>
+                            <div class="clear"></div>
+                            <div class="clear1"></div>
+                            <div class="login_arrow expandable loginopenheadernew">Enter Your Details</div>
+                            <div class="checkout_panel" id="ordvalret" style="margin-bottom:0px;">
 
-    <div class= "container banner1">
-    <div class="row no-margin">
-    <div class="col-sm-12 col-md-6 col-md-offset-3 custom-thumbnail signUp">
-                    <div class="row sign-up">
-                        <div class="col-sm-12 right-border signup">
-                            <div class="row">
-                              <div class="col-xs-12 text-center">
-                                <h2 class="text-uppercase"><b>Get Listed on Medstart</b></h2>
-                              </div>
-                            </div><!-- /.rw -->
-
-                            <form class="form-horizontal" id="signup1" action="#" method="post" style="margin-top: 20px;">
-                                <div id="mcongMsg"></div>
-
-                                <div class="form-group">
-                                <label class="col-sm-3 control-label" for="email">Merchant</label>
-                                <div class="col-sm-9">
-                                    <input type="text" id="rmerchant" name="merchant_name" placeholder="Enter Merchant Name" class="form-control"/>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label class="col-sm-3 control-label" for="email">Email</label>
-                                <div class="col-sm-9">
-                                    <input type="email" id="memail" name="email" placeholder="Enter Email" class="form-control"/>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label class="col-sm-3 control-label" for="mobile_no">Mobile No</label>
-                                <div class="col-sm-9">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">+91</span>
-                                        <input type="number" id="mmobile" name="mobile_no" placeholder="Enter Mobile Number" class="form-control"/>
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="mPassword" class="col-sm-3 control-label">Password</label>
-                                <div class="col-sm-9">
-                                  <input type="password" class="form-control" id="mPassword" name="inputPassword" placeholder="Enter Password">
-                                </div>
-                              </div>
-                                <div class="form-group">
-                                    <div class="col-xs-12 col-md-9 col-md-offset-3">
-                                      <input type="checkbox" id="mcheck" value="1" checked>
-                                      <a href="">I Accept Terms & conditions.</a>
-                                    </div>
-                                    <div class="col-xs-12 col-md-9 col-md-offset-3">
-                                        <div id="mer-err-msg"></div>
-                                    </div>
-                                </div>
-                              <div class="form-group">
-                                  <div class="sign-in-alert">
-                                    <div class="alert alert-danger form-alert" style="display: none">
-                                        <button type="button" id="web_button" class="close" data-dismiss="alert">×</button>
-                                        <div id="alert"></div>
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="form-group">
-
-                                  <button type="submit" id="msignup" class="btn btn-primary center-block btn-form-submit">Create Account</button>
-
-                              </div>
-
-                            </form>
-
-                            <div class="col-xs-12 checkbox-right">
                                 <div class="row">
-                                    <p class="pull-right"><a href="{% url 'login' %}">Already have an account</a></p>
+                                    <div class="col-sm-12">
+                                        <div class="clear_h"></div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="rmerchant">Enter Your Business Name *</label>
+                                                <input type="text" id="rmerchant" name="merchant_name" maxlength="50" class="form-control field-required" tabindex="1"><br>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="memail">Enter Your E-mail ID *</label>
+                                                <input type="email" id="memail" name="email" maxlength="50" class="form-control field-required" tabindex="1"><br>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                    <label for="mobile_no">Enter Mobile No. *</label>
+                                                    <input type="number" id="mmobile" name="mobile_no" maxlength="10" class="form-control field-required">
+                                                </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="mPassword">Choose Your Password*</label>
+                                                    <input type="password" id="mPassword" name="inputPassword" maxlength="15" class="form-control field-required" tabindex="2">
+                                                </div>
+                                            </div>
+                                        <div id="mer-err-msg" style="color: green"></div>
+                                        </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-6">
+                                            <div class="wall-txt">
+                                                <input type="checkbox" checked>
+                                                  <a href="">I Accept Terms & conditions.</a>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                                <div class="wall-txt">
+                                                    <button type="submit" id="msignup" class="btn btn-primary btn-form-submit">Create My Account</button>
+                                                </div>
+                                        </div>
+                                        <div class="clear_h"></div>
+                                    </div>
+
+                                    </div>
                                 </div>
-                            </div>
-
-                        </div><!-- 8x8 -->
-
-                    </div>
-    <div class="clearfix"> </div>
-                </div><!-- /.lg12x12 -->
-    </div>
-    </div>
+                                <div class="clear"></div>
+                                <div class="login_arrow expandable msignin"  url= "{% url 'login'  %}">Already Have an Account? Continue Here..</div>
+                      </div>
+                        </form>
+                  </section>
+                </div>
+            </div>
+        </div>
+   </div>
 <script type="text/javascript">
 $(document).ready(function(){
     $('form#signup1').submit(function(e) {
@@ -87,26 +83,36 @@ $(document).ready(function(){
         merchant = $("#rmerchant").val();
         if(merchant == '') {
             $('#mer-err-msg').text('Please enter your merchant name');
+            $('#mer-err-msg').show();
+            $("#mer-err-msg").delay(3200).fadeOut(3000);
             return false;
         }
         email = $('#memail').val();
         if (email == '') {
             $('#mer-err-msg').text('Email is required');
+            $('#mer-err-msg').show();
+            $("#mer-err-msg").delay(3200).fadeOut(3000);
             return false;
         }
         mobile = $('#mmobile').val();
         if (mobile == '') {
             $('#mer-err-msg').text('Mobile no. is required');
+            $('#mer-err-msg').show();
+            $("#mer-err-msg").delay(3200).fadeOut(3000);
             return false;
         }
         if (mobile != parseInt(mobile, 10)) {
             $('#mer-err-msg').text('Mobile no. should be Integer');
+            $('#mer-err-msg').show();
+            $("#mer-err-msg").delay(3200).fadeOut(3000);
             return false;
         } else {
             $('#mer-err-msg').text('');
         }
         if (mobile.length != 10) {
             $('#mer-err-msg').text('Mobile no. should be of 10 character only');
+            $('#mer-err-msg').show();
+            $("#mer-err-msg").delay(3200).fadeOut(3000);
             return false;
         } else {
             $('#mer-err-msg').text('');
@@ -115,6 +121,8 @@ $(document).ready(function(){
         password = $('#mPassword').val();
         if (password == '') {
             $('#mer-err-msg').text('Password is required');
+            $('#mer-err-msg').show();
+            $("#mer-err-msg").delay(3200).fadeOut(3000);
             return false;
         }
 
@@ -131,16 +139,20 @@ $(document).ready(function(){
             success: function (result) {
                 console.log(result)
                 $("#congMsg").text(result.Success)
-
-            },
-            error: function (result) {
-                $('#reg-err-msg').text(result.Error)
+                $('#mer-err-msg').text(result.Error)
+                $('#mer-err-msg').show();
                 $('#signup1').removeAttr('disabled');
-
+                $("#mer-err-msg").delay(3200).fadeOut(3000);
             }
 
         });
     });
+     $("div.msignin").click(
+            function()
+            {
+                window.location = $(this).attr("url");
+                return false;
+            });
     });
 </script>
 

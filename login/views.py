@@ -63,24 +63,24 @@ def register_merchant(request):
     else:
         merchant = request.POST["merchant"]
         email = request.POST["email"]
-        mobile=request.POST["mobile"]
-        password=request.POST["password"]
-        u=User()
+        mobile = request.POST["mobile"]
+        password = request.POST["password"]
+        u = User()
         try:
             if User.objects.filter(email=email):
-                response_data={'Error':'User with this email Already Exists'}
+                response_data = {'Error': 'User with this email Already Exists'}
                 return HttpResponse(json.dumps(response_data),content_type="application/json")
             elif User.objects.filter(mobile=mobile):
-                response_data={'Error':'User with this mobile Already Exists'}
-                return HttpResponse(json.dumps(response_data),content_type="application/json")
+                response_data = {'Error': 'User with this mobile Already Exists'}
+                return HttpResponse(json.dumps(response_data), content_type="application/json")
             else:
-                u = User.objects.create(email=email,mobile=mobile,user_type = 'MER',terms=True)
+                u = User.objects.create(email=email, mobile=mobile, user_type='MER', terms=True)
                 group = Group.objects.get(name='merchant')
                 u.set_password(password)
                 u.save()
-                m = Merchant.objects.create(mer_name=merchant,merchant_type='LIC')
+                m = Merchant.objects.create(mer_name=merchant, merchant_type='LIC')
                 m.save()
-                man = Managers.objects.create(user=u,merchant=m)
+                man = Managers.objects.create(user=u, merchant=m)
                 man.save()
                 group.user_set.add(u)
                 u = authenticate(username=email, password=password)
@@ -89,7 +89,7 @@ def register_merchant(request):
                 return HttpResponseRedirect(reverse('index'))
         except Exception, e:
             print e
-            return render(request,"login/signup.html")
+            return render(request, "login/signup.html")
 
 
 def userlogin(request):

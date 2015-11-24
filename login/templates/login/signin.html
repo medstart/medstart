@@ -1,78 +1,67 @@
 {% extends 'pages/home_base.html' %}
 {% block content %}
-               <div class="container banner1">
-            <div class="row no-margin">
-                <!-- Banner Left Box Starts -->
-                <div class="col-sm-8 col-md-6 col-xs-10 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 custom-thumbnail login">
-                    <div class="row no-margin">
-                        <div class="col-sm-12 col-md-12 right-border">
-                            <div class="row no-margin">
-                            	<div class="col-xs-12 text-center"><span class="h2 text-uppercase"><b>Sign in</b></span></div>
-                                 <!--<label class="forgot-right text-right"><p><a href="customer/signup">Create an account</a></p></label>-->
-                                <div class="alert alert-danger form-alert" style="display: none">
-<!--                                        <button type="button" class="close" data-dismiss="alert">×</button>-->
-                                        <div id="alert"></div>
+   <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-12" role="main">
+              <div class="bs-docs-section">
+                    <h1 id="overview" class="page-header">LOG IN</h1>
+                  <section>
+                    <form action="#" id="login" method="POST">
+                    <div id="login-main" style="margin-top:0px;" class="login_shake">
+                        <h1>Dear Valued Customer</h1>
+                            <p>Welcome back! Thank you for continuing to rely on us for your healthcare needs. We are committed to 100% customer satisfaction and we will do everything possible to make sure you are always satisfied with your purchase and our service.</p>
+                            <div class="clear"></div>
+{#                            <div class="securetrans pull-left">Secure Transaction</div>#}
+                            <div class="clear1"></div>
+                            <div class="login_arrow expandable loginopenheadernew">Enter Your Credentials</div>
+                            <div class="checkout_panel" id="ordvalret" style="margin-bottom:0px;">
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="clear_h"></div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="login_name">Your Username/E-mail ID *</label>
+                                                <input type="text" id="inputUsername" name="login_name" maxlength="50" class="form-control field-required" tabindex="1"><br>
+                                                <span style="font-size:11px; color:#000; ">
+                                                    Your WeMed Username is the same as your E-mail ID
+                                                </span><br>
+                                                <span class="login-box-forgot"><a href="#" data-fancybox-type="iframe" class="trkclick1" title="Retrieve Your Password">Forgot Your Password?</a></span>
+
+                                            </div>
+                                            <div id="login-err-msg" style="color: red ; font-size: medium"></div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="inputPassword">Enter Your Password *</label>
+                                                    <input name="login_password" type="password" id="inputPassword" maxlength="50" class="form-control field-required" tabindex="2">
+                                                </div>
+                                                <div class="form-group" style="margin-bottom:10px !important">
+                                                    <div class="wall-txt">
+                                                        <input name="chk_user" type="checkbox" id="chk_user">
+                                                        <label for="chk_user" class="login-box-remem"><span></span>Remember me on this computer!</label>
+                                                    </div>
+                                                            <button type="submit" id="lsignin" class="btn btn-primary btn-form-submit">Sign in</button>
+{#                                                        <button type="submit" id="lsignin" class="btn btn-default chkout-btn field-required" title="Click here to Login" tabindex="3">Continue</button>#}
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
-
-                            </div><!-- /.rw -->
-                            <div class="col-xs-12">
-                            <form class="form-horizontal" id="login" action="#" method="post" style="margin-top: 20px;">
-                              <div class="form-group">
-                                <label class="col-sm-2 control-label" for="login_name">Username</label>
-                                <div class="col-sm-10">
-                                    <input type="text" id=inputUsername name="login_name" placeholder="Enter Username" class="form-control"/>
                                 </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-                                <div class="col-sm-10">
-                                  <input type="password" class="form-control" id="inputPassword" name="login_password" placeholder="Password">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                  <div class="sign-in-alert">
-                                    <div class="alert alert-danger form-alert" style="display: none">
-                                        <button type="button" id="web_button" class="close" data-dismiss="alert">×</button>
-                                        <div id="alert"></div>
-                                        <div id="login-err-msg"></div>
-                                    </div>
-                                </div>
-                              </div>
-                                <div class="form-group">
-
-                                  <button type="submit" id="lsignin" class="btn btn-primary center-block btn-form-submit">Sign in</button>
-
-                              </div>
-                            </form>
-                            </div>
-
-
-                                <div class="row forgot-row">
-                                  <div class="col-xs-12">
-                                    <div class="col-sm-6 col-md-6 col-xs-6">
-                            	        <label class="rqpass text-left"><p><a class="new-act-btn" href="{% url 'signup_customer' %}">Create new account</a></p></label>
-                                    </div><!-- /.6x6 -->
-
-                                    <div class="col-sm-6 col-md-6 col-xs-6">
-                                        <label class="rqpass text-right pull-right"><p><a href="{% url 'reset_password' %}">Request password</a></p></label>
-                                    </div>
-                                  </div>
-                                </div>
-
-
-                        </div><!-- 8x8 -->
-
-                    </div><!-- /.row custm thmbnl -->
-                </div><!-- /.lg12x12 -->
-                <!-- Banner Left Box Ends -->
-
+                                <div class="clear"></div>
+                                <div class="login_arrow expandable signup"  url= "{% url 'signup_customer'  %}">New Customer? Create Your Account</div>
+                      </div>
+                        </form>
+                  </section>
+                </div>
             </div>
         </div>
-
+   </div>
     <script type="text/javascript">
-$(document).ready(function(){
-    $('form#login').submit(function(e) {
-        e.preventDefault();
+        $(document).ready(function(){
+        $('form#login').submit(function(e) {
+              e.preventDefault();
         username = $('#inputUsername').val();
         if (username == '') {
             $('#login-err-msg').text('Username is required');
@@ -95,16 +84,23 @@ $(document).ready(function(){
             success: function (result) {
                 console.log(result)
 
-
-            },
-            error: function (result) {
                 $('#login-err-msg').text(result.Error)
-                $('#login').removeAttr('disabled');
-
+                $('#lsignin').removeAttr('disabled');
+                $("#login-err-msg").delay(3200).fadeOut(6000);
+                $('#inputUsername').val('');
+                $('#inputPassword').val('');
             }
 
         });
     });
-    });
+            $("div.signup").click(
+            function()
+            {
+                window.location = $(this).attr("url");
+                return false;
+            });
+
+});
+
 </script>
 {% endblock %}
