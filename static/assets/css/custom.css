@@ -132,6 +132,14 @@ input[type='radio']:checked:before {
   width: 33.33333333%;
 }
 
+hr {
+  clear: both;
+  color: #428bca;
+  background-color: #428bca;
+  height: 1px;
+  border-width: 0;
+}
+
 .find .btn {
 
   font-size: 16px;
