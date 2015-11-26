@@ -4,18 +4,21 @@ from django.shortcuts import render, redirect
 from merchant.forms import ManagerInfo, OfficeInfo, MerchantInfo
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
+from merchant.models import Managers
 
 
 def merchant_info(request):
     title = 'Pharmacy Details | medstart'
-
+    user = request.user
+    manager = Managers.objects.get(user=user)
+    merchant = manager.merchant
     if request.method == 'GET':
-        form = MerchantInfo()
+        form = MerchantInfo(instance=merchant)
         return render(request, "merchant/companyinfo.html", locals())
     else:
-        form = MerchantInfo(request.POST, request.FILES)
+        form = MerchantInfo(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
-            return redirect('manager_info')
+            return HttpResponseRedirect(reverse('manager_info'))
         else:
             return render(request, "merchant/companyinfo.html", locals())
 
@@ -29,7 +32,7 @@ def manager_info(request):
     else:
         form = ManagerInfo(request.POST, request.FILES)
         if form.is_valid():
-            return redirect('mer_contact_info')
+            return HttpResponseRedirect(reverse('mer_contact_info'))
         else:
             return render(request, "merchant/managerinfo.html", locals())
 
