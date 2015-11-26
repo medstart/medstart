@@ -7,11 +7,11 @@
         <nav class="blog-nav blog-navbar-right">
           <a class="blog-nav-item " href="{% url 'index' %}">Home</a>
           <a class="blog-nav-item" href="#">About Us</a>
-          <a class="blog-nav-item" href="#">Contact US</a>
+          <a class="blog-nav-item" href="#">Contact Us</a>
           {% if user.is_anonymous == True %}
                     <a class="blog-nav-item" href="{% url 'signup_customer' %}">SignUp</a>
                     <a class="blog-nav-item" href="{% url 'login' %}">LogIn</a>
-                    <a class="blog-nav-item" href="{% url 'signup_merchant' %}">For Business</a>
+                    <a class="blog-nav-item" href="{% url 'signup_merchant' %}">Get Listing Your Store</a>
                 {% endif %}
                 {% if user.user_type == 'CST' or user.user_type == 'MER' %}
                    <a class="blog-nav-item" href="{% url 'logout' %}">Logout</a>
