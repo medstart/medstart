@@ -1,10 +1,11 @@
 <div class="blog-masthead">
       <div class="container">
        <div class="blog-navbar-brand">
-			<a href="#" style="color: #ffffff">WeMed</a>
+           <a href="{% url 'index' %}"><img src="/static/assets/images/logonew.gif" width="150" style="margin: -20px"></a>
+{#			 style="color: #ffffff">WeMed</a>#}
 		 </div>
         <nav class="blog-nav blog-navbar-right">
-          <a class="blog-nav-item " href="#">Home</a>
+          <a class="blog-nav-item " href="{% url 'index' %}">Home</a>
           <a class="blog-nav-item" href="#">About Us</a>
           <a class="blog-nav-item" href="#">Contact US</a>
           {% if user.is_anonymous == True %}
