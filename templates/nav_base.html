@@ -1,44 +1,17 @@
-
-{#	<div class="header">#}
-{#      <div class="container">#}
-{#  	     <div class="logo">#}
-{#			<h1><a href="#">Med Start</a></h1>#}
-{#		 </div>#}
-{#		 <div class="top_right">#}
-{#		   <ul>#}
-{#                <li><a href="/">Home</a></li>#}
-{#                <li><a href="#">About Us</a></li>#}
-{#                <li><a href="#">Contact Us</a></li>#}
-{#                {% if user.is_anonymous == True %}#}
-{#                    <li><a href="{% url 'signup_customer' %}">SignUp</a></li>#}
-{#                    <li><a href="{% url 'login' %}">LogIn</a></li>#}
-{#                    <li><a href="{% url 'signup_merchant' %}">For Business</a></li>#}
-{#                {% endif %}#}
-{#                {% if user.user_type == 'CST' or user.user_type == 'MER' %}#}
-{#                   <li><a href="{% url 'logout' %}">Logout</a></li>#}
-{#               {% endif %}#}
-{#		   </ul>#}
-{#	     </div>#}
-{#		 <div class="clearfix"></div>#}
-{#		</div>#}
-{#	</div>#}
-{##}
-{##}
-
-
 <div class="blog-masthead">
       <div class="container">
        <div class="blog-navbar-brand">
-			<a href="#" style="color: #ffffff">WeMed</a>
+           <a href="{% url 'index' %}"><img src="/static/assets/images/logonew.gif" width="150" style="margin: -20px"></a>
+{#			 style="color: #ffffff">WeMed</a>#}
 		 </div>
         <nav class="blog-nav blog-navbar-right">
-          <a class="blog-nav-item " href="#">Home</a>
+          <a class="blog-nav-item " href="{% url 'index' %}">Home</a>
           <a class="blog-nav-item" href="#">About Us</a>
-          <a class="blog-nav-item" href="#">Contact US</a>
+          <a class="blog-nav-item" href="#">Contact Us</a>
           {% if user.is_anonymous == True %}
                     <a class="blog-nav-item" href="{% url 'signup_customer' %}">SignUp</a>
                     <a class="blog-nav-item" href="{% url 'login' %}">LogIn</a>
-                    <a class="blog-nav-item" href="{% url 'signup_merchant' %}">For Business</a>
+                    <a class="blog-nav-item" href="{% url 'signup_merchant' %}">Get Listing Your Store</a>
                 {% endif %}
                 {% if user.user_type == 'CST' or user.user_type == 'MER' %}
                    <a class="blog-nav-item" href="{% url 'logout' %}">Logout</a>
@@ -47,7 +20,4 @@
         </nav>
         </div>
       </div>
-
-
-
 
