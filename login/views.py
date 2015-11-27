@@ -91,18 +91,18 @@ def register_merchant(request):
                 man = Managers.objects.create(user=user, merchant=merchant)
                 man.save()
                 # email to merchant
+                client_name = merchant.mer_name
                 email_context = {
-                    'message': 'Hello This is Testing'
+                    'message': 'Hello This is Testing',
+                    'business_name': client_name
                 }
                 recipient = 'komalkgupta@live.com'
-                sending_status = send_wemed_mail('email_templates/merchant/'
-                                                 'welcome_merchant.html',
-                                                 email_context,
-                                                 'email_templates/merchant/'
-                                                 'welcome_merchant_subject.txt',
-                                                 recipient,
-                                                 cc_list=[
-                                                     'coolkomal09@gmail.com'])
+                send_wemed_mail('email_templates/merchant/'
+                                'welcome_merchant.html', email_context,
+                                'email_templates/merchant/'
+                                'welcome_merchant_subject.txt', recipient,
+                                cc_list=[
+                                    'coolkomal09@gmail.com'])
                 group.user_set.add(user)
                 user = authenticate(username=email, password=password)
                 user.backend = 'django.contrib.auth.backends.ModelBackend'

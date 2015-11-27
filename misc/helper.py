@@ -79,7 +79,7 @@ def send_wemed_mail(template_name, email_context, subject, recipients,
                  """
                 # if not bool(re.match(r'[0-9]{10}@wemed.com$', recipient)):
 
-            final_recipients.append(recipient)
+                final_recipients.append(recipient)
             """
                   TODO: once we deploy prod this is so that emails can be sent
                   to local developers for testing purpose
