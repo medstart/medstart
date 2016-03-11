@@ -1,15 +1,8 @@
 from django.contrib import admin
+from customer.models import Customer, Delivery, Contact
 
-# Register your models here.
-from django.contrib.admin import ModelAdmin
-from customer.models import Customer , Delivery , Contact
+admin.site.register(Customer)
 
+admin.site.register(Contact)
 
-class Customer(ModelAdmin):
-    admin.site.register(Customer, ModelAdmin)
-
-class Contact(ModelAdmin):
-    admin.site.register(Contact, ModelAdmin)
-
-class Delivery(ModelAdmin):
-    admin.site.register(Delivery, ModelAdmin)
+admin.site.register(Delivery)

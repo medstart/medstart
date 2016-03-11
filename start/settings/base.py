@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'misc',
     'customer',
     'merchant',
+    'smsandemail',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -140,3 +141,12 @@ STATICFILES_FINDERS = (
 )
 
 AUTH_USER_MODEL = 'login.User'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_PASSWORD = 'wcsgiucxsdpxudfq'
+EMAIL_HOST_USER = 'finallystart15@gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+SITE = 'localhost'
+LOCAL_EMAIL_RECIPIENTS = 'komalkgupta@live.com'
